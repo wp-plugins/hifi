@@ -1,6 +1,6 @@
 === HiFi (Head Injection, Foot Injection) ===
 Contributors: farinspace
-Tags: head, foot, footer, injection, include, insert, script, style, css, meta
+Tags: posts, post, page, admin, head, foot, footer, injection, include, insert, script, style, css, meta
 Requires at least: 2.9.2
 Tested up to: 2.9.2
 Stable tag: 1.0
