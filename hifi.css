@@ -1,0 +1,8 @@
+.hifi_post_control .description
+{ display:none; }
+
+.hifi_post_control label 
+{ display: block; color: #999; }
+
+.hifi_post_control textarea
+{ width:99%; }
