@@ -3,7 +3,7 @@ Contributors: farinspace
 Tags: posts, post, page, admin, head, foot, footer, injection, include, insert, script, style, css, meta
 Requires at least: 2.9.2
 Tested up to: 2.9.2
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 HiFi is a head and foot injection plugin. It allows you to inject code into the head and foot areas of your posts and pages on a per-page basis.
 
@@ -36,6 +36,9 @@ If you've downloaded the latest plugin files:
 1. HiFi adds a "Head & Foot" meta box when editing a post or page. It basically allows you to inject `<script>`, `<style>`, `<meta>` and any other code you want into the head and foot areas of your posts and pages. The code injected is page-specific, this means that only the pages you want code inserted into will be affected.
 
 == Changelog ==
+
+= 1.0.1 =
+* added check for post object when inserting into head and footer
 
 = 1.0 =
 * Initial release

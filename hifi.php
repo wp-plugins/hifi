@@ -4,7 +4,7 @@ Plugin Name: HiFi
 Plugin URI: http://farinspace.com/2010/03/wordpress-hifi-plugin/
 Description: HIFI is a <em>head injection</em> and <em>foot injection</em> plugin. It allows you to inject <code>&lt;script&gt;</code>, <code>&lt;style&gt;</code>, <code>&lt;meta&gt;</code> and any other code you want into your posts and pages. The code injected is <em>page-specific</em>, this means that only the pages you want will be affected.
 Author: Dimas Begunoff
-Version: 1.0
+Version: 1.0.1
 Author URI: http://farinspace.com/
 */
 
@@ -31,18 +31,24 @@ function hifi_head_inject()
 {
 	global $post;
 
-	$v = get_post_meta($post->ID,'hifi_head',TRUE);
+	if (isset($post->ID))
+	{
+		$v = get_post_meta($post->ID,'hifi_head',TRUE);
 
-	if ($v) echo "\n" . $v . "\n";
+		if ($v) echo "\n" . $v . "\n";
+	}
 }
 
 function hifi_foot_inject()
 {
 	global $post;
 
-	$v = get_post_meta($post->ID,'hifi_foot',TRUE);
+	if (isset($post->ID))
+	{
+		$v = get_post_meta($post->ID,'hifi_foot',TRUE);
 	
-	if ($v) echo "\n" . $v . "\n";
+		if ($v) echo "\n" . $v . "\n";
+	}
 }
 
 function hifi_init()
@@ -88,7 +94,6 @@ function hifi_save_meta($post_id)
 	{
 		if (!current_user_can('edit_post', $post_id)) return $post_id;
 	}
-
 
 	// save data
 	foreach ($hifi_fields as $field_name) 
