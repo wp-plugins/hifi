@@ -81,7 +81,8 @@ function hifi_save_meta($post_id)
 	global $hifi_fields;
 
 	// make sure all new data came from the proper HIFI entry fields
-	if (!wp_verify_nonce($_POST['hifi_options_noncename'],plugin_basename(__FILE__)))
+	if (!isset($_POST['hifi_options_noncename']) ||
+		!wp_verify_nonce($_POST['hifi_options_noncename'],plugin_basename(__FILE__)))
 	{
 		return $post_id;
 	}
